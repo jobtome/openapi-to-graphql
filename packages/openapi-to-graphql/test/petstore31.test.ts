@@ -31,5 +31,5 @@ test('Petstore 3.1 works', () => {
   const gqlTypes = Object.keys(
     (createdSchema.getTypeMap().Query as GraphQLObjectType).getFields()
   )
-  expect(gqlTypes).toEqual(2)
+  expect(gqlTypes.length).toEqual(2)
 })

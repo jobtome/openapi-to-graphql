@@ -218,7 +218,10 @@ export async function preprocessOas<TSource, TContext, TArgs>(
     oass.map(async (oas) => {
       // Store stats on OAS:
       try {
-        await OpenAPIParser.validate(oas)
+        await OpenAPIParser.validate(
+          JSON.parse(JSON.stringify(oas)),
+          options.oasValidatorOptions
+        )
       } catch (e) {
         data.options.report.validationErrors = (
           data.options.report.validationErrors || []

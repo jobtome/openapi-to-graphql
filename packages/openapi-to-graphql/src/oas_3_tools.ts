@@ -173,7 +173,10 @@ export async function getValidOAS3(
   } else if (isOas3(spec)) {
     preprocessingLog(`Received OpenAPI Specification - going to validate...`)
     if (!softValidate) {
-      await OpenAPIParser.validate(spec, oasValidatorOptions)
+      await OpenAPIParser.validate(
+        JSON.parse(JSON.stringify(spec)),
+        oasValidatorOptions
+      )
     }
   } else {
     throw new Error(`Invalid specification provided`)
