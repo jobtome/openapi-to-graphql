@@ -14,6 +14,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: yarn
       - run: yarn build
-      - run: yarn npm publish
+      - run: yarn npm publish ./packages/openapi-to-graphql
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: yarn npm publish ./packages/openapi-to-graphql-cli
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
