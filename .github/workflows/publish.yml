@@ -12,10 +12,12 @@ jobs:
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
+          always-auth: true
       - run: yarn
       - run: yarn build
       - run: yarn config set 'npmRegistries["//registry.npmjs.org"].npmAuthToken' "${{ secrets.NPM_TOKEN }}"
       - run: yarn config set 'npmRegistries["//registry.npmjs.org"].npmAlwaysAuth' "true"
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - run: cat .yarnrc.yml
       - run: yarn workspace @jobtome/openapi-to-graphql npm publish --tolerate-republish
       - run: yarn workspace @jobtome/openapi-to-graphql-cli npm publish --tolerate-republish
