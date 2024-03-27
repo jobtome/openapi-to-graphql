@@ -17,6 +17,8 @@ jobs:
       - run: ls -al
       - run: cp .yarnrc.yml ./packages/openapi-to-graphql
       - run: cp .yarnrc.yml ./packages/openapi-to-graphql-cli
+        run: cp -R .yarn ./packages/openapi-to-graphql
+      - run: cp -R .yarnrc.yml ./packages/openapi-to-graphql-cli
       - run: cd ./packages/openapi-to-graphql && yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

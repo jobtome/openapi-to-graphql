@@ -60,7 +60,7 @@ Here are some guides to further help you get started:
   <img src="https://raw.githubusercontent.com/ibm/openapi-to-graphql/master/docs/data-centric.png" alt="Example of data-centric design" width="600">
 
 - **Nested data**
-  [Links](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#linkObject) defined in the OAS are used to create nested data structures, allowing for (deeply) nested queries. 
+  [Links](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md#linkObject) defined in the OAS are used to create nested data structures, allowing for (deeply) nested queries.
 
   <img src="https://raw.githubusercontent.com/ibm/openapi-to-graphql/master/docs/links.png" alt="Example of links resolution" width="600">
 
@@ -73,7 +73,7 @@ Here are some guides to further help you get started:
   Non-safe, non-idempotent API operations (e.g., `POST`, `PUT`, `DELETE`) are translated to GraphQL [mutations](http://graphql.org/learn/queries/#mutations). Input payload is type-checked.
 
   <img src="https://raw.githubusercontent.com/ibm/openapi-to-graphql/master/docs/mutations.png" alt="Example of mutation" width="600">
-  
+
 - **Subscriptions**
   GraphQL [subscriptions](http://spec.graphql.org/draft/#sec-Subscription) allow clients to receive a stream of events, such as updates whenever data changes on the GraphQL server. OpenAPI-to-GraphQL can create subscriptions based on [`callback`](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#CallbackObject) objects defined in the OAS.
 
@@ -96,6 +96,14 @@ Here are some guides to further help you get started:
 ## Development
 
 OpenAPI-to-GraphQL is written in [TypeScript](http://www.typescriptlang.org/). Within each of OpenAPI-to-GraphQL's packages, all source code is contained in the `src` folder. Use `yarn build` or `yarn test` to transpile the source files into the final library in the `dist` folder. Entry-point for the library is `index.js` in `dist`.
+
+### How to release
+
+> releasing is not the dream job but we have to play with the structure created by the other teams, so:
+
+- update all the pacakges.json inside the project with the new version
+- push the code
+- run `gh release create <version>`
 
 ## Research
 
