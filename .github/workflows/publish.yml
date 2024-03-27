@@ -14,6 +14,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: yarn
       - run: yarn build
-      - run: yarn workspaces foreach --no-private npm publish --tolerate-republish
+      - run: yarn workspace @jobtome/openapi-to-graphql npm publish --tolerate-republish
+      - run: yarn workspace @jobtome/openapi-to-graphql-cli npm publish --tolerate-republish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
