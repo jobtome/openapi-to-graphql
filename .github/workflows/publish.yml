@@ -20,7 +20,6 @@ jobs:
       - run: yarn config set npmPublishRegistry 'https://registry.npmjs.org/'
       - run: yarn config set npmAuthToken "${{ secrets.NPM_TOKEN }}"
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-      - run: cat .yarnrc.yml
       - run: yarn workspace @jobtome/openapi-to-graphql npm publish --tolerate-republish
       - run: yarn workspace @jobtome/openapi-to-graphql-cli npm publish --tolerate-republish
         env:
