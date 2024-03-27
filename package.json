@@ -1,5 +1,5 @@
 {
-  "name": "@hasura/openapi-to-graphql-root",
+  "name": "@jobtome/openapi-to-graphql-root",
   "private": true,
   "scripts": {
     "transpile-ts": "tsc --project tsconfig.build.json",
@@ -10,8 +10,7 @@
     "node": ">=14"
   },
   "contributors": [
-    "Alan Cha",
-    "Erik Wittern"
+    "Riccardo Canella <@thecreazy>"
   ],
   "workspaces": {
     "packages": [
